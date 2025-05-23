@@ -18,14 +18,10 @@ public class LoginController {
         return "login";
     }
 
-//    @GetMapping("/home")
-//    public String showHome() {
-//        return "Home";
-//    }
-
     @PostMapping("/login")
     @ResponseBody
     public RedirectView processLogin(@RequestParam String username, @RequestParam String password, HttpSession session) {
+        session.setAttribute("loggedIn", false);
         if ("user".equals(username) && "password".equals(password)) {
             session.setAttribute("loggedIn", true);
             return new RedirectView("/doTransfer");
@@ -48,5 +44,5 @@ public class LoginController {
 //        } else {
 //            return new RedirectView("/login");
 //        }
-//    }
 }
+
