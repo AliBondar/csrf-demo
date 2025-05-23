@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HomeController {
 
-    @GetMapping("/home")
-    public String index() {
-        return "index";
-    }
+//    @GetMapping("/home")
+//    public String showHome() {
+//        return "Home";
+//    }
 
     @PostMapping("/change-password")
     @ResponseBody
